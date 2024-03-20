@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "shirt": " Apollo Running Short",
+    "price": "$ 50",
+    "image": "/image.png",
+    "stock": true
+  },
+  {
+    "id": 2,
+    "shirt": " Nike",
+    "price": "$ 500",
+    "image": "/image1.png"
+  },
+  {
+    "id": 3,
+    "shirt": " Adidas",
+    "price": "$ 56",
+    "image": "/image2.png"
+  },
+  {
+    "id": 4,
+    "shirt": " Puma",
+    "price": "$ 70",
+    "image": "/image3.png"
+  },
+  {
+    "id": 5,
+    "shirt": "Hrx",
+    "price": "$ 90",
+    "image": "/image1.png"
+  },
+  {
+    "id": 6,
+    "shirt": " Roadstar",
+    "price": "$ 30",
+    "image": "/image.png"
+  }
+]
