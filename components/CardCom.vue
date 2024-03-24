@@ -11,12 +11,12 @@
         >
           <div class="image-box">
             <img :src="item.image" alt="" class="img-space" />
-            <div class="cart-logo">
+            <button class="cart-logo">
               <font-awesome-icon
                 :icon="['fas', 'cart-shopping']"
                 class="icon-color"
               />
-            </div>
+            </button>
           </div>
           <div class="item-name">{{ item.shirt }}</div>
           <div class="item-price">{{ item.price }}</div>
@@ -35,6 +35,7 @@ export default {
       myData: products,
     };
   },
+ 
 };
 </script>
 <style scoped>
@@ -100,6 +101,7 @@ export default {
   justify-content: center;
   align-items: center;
   transform: translate(0%, 50%);
+  border: none;
 }
 .icon-color {
   color: white;

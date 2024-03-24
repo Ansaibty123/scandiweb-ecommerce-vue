@@ -1,35 +1,40 @@
 <template>
-  <div>
+  <main>
     <div>
       <div class="text-1">{{ product.shirt }}</div>
       <div class="text-2">Running Short</div>
     </div>
     <div>
       <div class="size">SIZE :</div>
-      <div class="size-box flex">
-        <div class="size-box1 flex"><span class="size-items">XS</span></div>
-        <div class="size-box1 flex" style="background-color: #1d1f22">
-          <span class="size-items" style="color: #ffffff">S</span>
-        </div>
-        <div class="size-box1 flex"><span class="size-items">M</span></div>
-        <div class="size-box1 flex"><span class="size-items">L</span></div>
-      </div>
-      <div class="color size-box">
+      <section class="size-box flex">
+        <button
+          v-for="(item, i) in product.sizes"
+          :key="i"
+          :class="{ 'selected-color': item == selectedSize }"
+          @click="addSize(item)"
+          class="size-box1 flex"
+        >
+          <span class="size-items">{{ item }}</span>
+        </button>
+      </section>
+      <section class="color size-box">
         <div class="size">COLOR :</div>
         <div class="flex">
-          <div class="color-items" style="background-color: #d3d2d5"></div>
-          <div class="color-items" style="background-color: #2b2b2b"></div>
-          <div class="color-items" style="background-color: #0f6450"></div>
+          <button
+            v-for="(item, i) in product.colors"
+            :key="i"
+            class="color-items"
+            :class="{ 'selected-color': item == selectedColor }"
+            :style="{ backgroundColor: item }"
+            @click="addColor(item)"
+          ></button>
         </div>
-      </div>
-      <div>
-        <div class="size price-mar">Price</div>
-        <div class="size">{{ product.price }}</div>
-      </div>
-      <button class="btn">ADD TO CART</button>
-      <div class="para">{{ paragraph }}</div>
+      </section>
     </div>
-  </div>
+    <button class="btn" @click="addToCart(product)">ADD TO CART</button>
+
+    <div class="para">{{ paragraph }}</div>
+  </main>
 </template>
 <script>
 export default {
@@ -37,10 +42,28 @@ export default {
 
   data() {
     return {
-      paragraph: `Find stunning women's cocktail dresses 
+      paragraph: `Find stunning women's cocktail dresses
                   and party dresses. Stand out in lace and metallic
                   cocktail dresses and party dresses from all your favorite brands.`,
+      selectedColor: "",
+      selectedSize: "",
     };
+  },
+  methods: {
+    addToCart(product) {
+      // this.addShirt.push(product);
+      this.$store.commit("addCartItem", {
+        ...product,
+        color: this.selectedColor,
+        size: this.selectedSize,
+      });
+    },
+    addColor(value) {
+      this.selectedColor = value;
+    },
+    addSize(value) {
+      this.selectedSize = value;
+    },
   },
 };
 </script>
@@ -49,6 +72,29 @@ export default {
   display: flex;
   gap: 10px;
 }
+
+.color-items {
+  height: 32px;
+  width: 32px;
+  border: none;
+}
+
+.size-box1.selected-color {
+  border: 2px solid rgba(94, 206, 123, 1);
+}
+
+.color-items.selected-color {
+  border: 2px solid rgba(94, 206, 123, 1);
+}
+
+.size-box1 {
+  width: 63px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
 .text-1 {
   font-weight: 600;
   font-size: 30px;
@@ -73,23 +119,14 @@ export default {
 .size-box {
   margin-bottom: 24px;
 }
-.size-box1 {
-  width: 63px;
-  height: 45px;
-  border: 1px solid #1d1f22;
-  align-items: center;
-  justify-content: center;
-}
+
 .size-items {
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
   color: #1d1f22;
 }
-.color-items {
-  height: 32px;
-  width: 32px;
-}
+
 .btn {
   width: 292px;
   height: 52px;

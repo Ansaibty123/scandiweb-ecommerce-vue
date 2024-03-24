@@ -10,7 +10,7 @@
          <span class="tax-no">3</span>
       </div>
       <div><span class="tax">Total:</span>
-         <span class="tax-no">$200.00</span></div>
+         <span class="tax-no">$20</span></div>
     </div>
     <button class="btn">ORDER</button>
   </div>

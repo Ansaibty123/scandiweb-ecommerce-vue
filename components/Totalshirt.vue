@@ -1,28 +1,29 @@
 <template>
   <div class="box">
     <div class="quantity-set">
-      <div class="plus flex">+</div>
-      <div class="quantity ">1</div>
-      <div class="plus flex">-</div>
+      <button class="plus flex" @click="increase">+</button>
+      <div class="quantity">1</div>
+      <button class="plus flex">-</button>
     </div>
     <div>
       <img src="image.png" alt="" class="image" />
     </div>
   </div>
 </template>
-<script></script>
+<script>
+
+</script>
 <style scoped>
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.quantity-set{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column; 
-    align-items: center;
-
+.quantity-set {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 .box {
   display: flex;
@@ -36,7 +37,6 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 38.4px;
-
 }
 .quantity {
   width: 10px;
@@ -44,7 +44,6 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 38.4px;
-  
 }
 .image {
   width: 200px;

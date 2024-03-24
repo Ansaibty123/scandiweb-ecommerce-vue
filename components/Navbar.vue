@@ -32,9 +32,10 @@
           <button class="nav-button" @click="onClickCart">
             <cart />
           </button>
-          <CartDropdown v-if="toggle" class="dropdown" />
+          <CartDropdown v-if="isCartOpen" class="cart-dropdown" />
         </div>
       </div>
+      <div class="dark-backdrop" v-if="isCartOpen"></div>
     </nav>
   </div>
 </template>
@@ -52,13 +53,13 @@ export default {
     return {
       navitems: ["WOMEN", "MEN", "KIDS"],
       activeNavItem: "MEN",
-      toggle: false,
+      isCartOpen: false,
       dollar: false,
     };
   },
   methods: {
     onClickCart() {
-      this.toggle = !this.toggle;
+      this.isCartOpen = !this.isCartOpen;
     },
     onClickDollar() {
       this.dollar = !this.dollar;
@@ -75,6 +76,7 @@ export default {
 
 .navbar {
   height: 80px;
+  position: relative;
 }
 .nav {
   display: flex;
@@ -117,13 +119,14 @@ export default {
   background: lightgrey;
 }
 
-.dropdown {
+.cart-dropdown {
   width: 325px;
   position: absolute;
-  top: 35px;
+  top: 55px;
   right: 0px;
   background: white;
-  border: 1px dotted black;
+  z-index: 2;
+  
 }
 .currency-dropdown {
   width: 114px;
@@ -132,5 +135,15 @@ export default {
   right: 0px;
   background: white;
   box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
+}
+
+.dark-backdrop {
+  background: rgba(57, 55, 72, 0.22);
+  width: 100vw;
+  height: 100vh;
+  top: 80px;
+  left: 0px;
+  z-index: 1;
+  position: fixed;
 }
 </style>

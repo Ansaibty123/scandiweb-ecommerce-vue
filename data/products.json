@@ -2,38 +2,50 @@
   {
     "id": 1,
     "shirt": " Apollo Running Short",
-    "price": "$ 50",
+    "price": 50,
     "image": "/image.png",
+    "colors": ["#d3d2d5", "#2b2b2b", "#0f6450"],
+    "sizes": ["XL", "L", "S", "M"],
     "stock": true
   },
   {
     "id": 2,
     "shirt": " Nike",
-    "price": "$ 500",
-    "image": "/image1.png"
+    "price":  500,
+    "image": "/image1.png",
+    "colors": ["#d3d2d5", "#2b2b2b", "#0f6450"],
+    "sizes": ["32", "34", "36"]
   },
   {
     "id": 3,
     "shirt": " Adidas",
-    "price": "$ 56",
-    "image": "/image2.png"
+    "price": 56,
+    "image": "/image2.png",
+    "colors": ["#d3d2d5", "#2b2b2b", "#0f6450"],
+    "sizes": ["XL", "L", "S", "M"]
   },
   {
     "id": 4,
     "shirt": " Puma",
-    "price": "$ 70",
-    "image": "/image3.png"
+    "price":  70,
+    "image": "/image3.png",
+    "colors": ["#d3d2d5", "#2b2b2b", "#0f6450"],
+    "sizes": ["XL", "L", "S", "M"]
   },
   {
     "id": 5,
     "shirt": "Hrx",
-    "price": "$ 90",
-    "image": "/image1.png"
+    "price":  90,
+    "image": "/image1.png",
+    "colors": ["#d3d2d5", "#2b2b2b", "#0f6450"],
+    "sizes": ["XL", "L", "S", "M"]
   },
   {
     "id": 6,
     "shirt": " Roadstar",
-    "price": "$ 30",
-    "image": "/image.png"
+    "price": 30,
+    "image": "/image.png",
+    "colors": ["#d3d2d5", "#2b2b2b", "#0f6450"],
+    "sizes": ["XL", "L", "S", "M"]
   }
 ]
